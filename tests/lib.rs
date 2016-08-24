@@ -129,7 +129,7 @@ fn it_amount_bad_format() {
 }
 
 #[test]
-fn it_amount_ops_ints() {
+fn it_amount_ops() {
     let mut amount = Amount::min_value();
     let amount_10 = Amount::from_repr(10_000);
     assert_eq!(amount + amount_10, Amount::from_repr(10_000));
@@ -154,46 +154,4 @@ fn it_amount_ops_ints() {
     amount %= 10u32;
     assert_eq!(amount, Amount::from_repr(2_345));
     assert_eq!(amount % 1u32, Amount::from_repr(345));
-}
-
-#[test]
-fn it_amounts_add_amounts() {
-    let mut amount = Amount::from_repr(12_345);
-    let amount_2 = Amount::from_repr(10_000);
-    assert_eq!(amount + amount_2, Amount::from_repr(22_345));
-    amount += amount_2;
-    assert_eq!(amount, Amount::from_repr(22_345));
-
-    let mut amount = Amount::from_repr(12_345);
-    let amount_2 = Amount::from_repr(1_000);
-    assert_eq!(amount + amount_2, Amount::from_repr(13_345));
-    amount += amount_2;
-    assert_eq!(amount, Amount::from_repr(13_345));
-
-    let mut amount = Amount::from_repr(12_345);
-    let amount_2 = Amount::from_repr(500);
-    assert_eq!(amount + amount_2, Amount::from_repr(12_845));
-    amount += amount_2;
-    assert_eq!(amount, Amount::from_repr(12_845));
-}
-
-#[test]
-fn it_amounts_sub_amounts() {
-    let mut amount = Amount::from_repr(12_345);
-    let amount_2 = Amount::from_repr(10_000);
-    assert_eq!(amount - amount_2, Amount::from_repr(2_345));
-    amount -= amount_2;
-    assert_eq!(amount, Amount::from_repr(2_345));
-
-    let mut amount = Amount::from_repr(12_345);
-    let amount_2 = Amount::from_repr(1_000);
-    assert_eq!(amount - amount_2, Amount::from_repr(11_345));
-    amount -= amount_2;
-    assert_eq!(amount, Amount::from_repr(11_345));
-
-    let mut amount = Amount::from_repr(12_345);
-    let amount_2 = Amount::from_repr(500);
-    assert_eq!(amount - amount_2, Amount::from_repr(11_845));
-    amount -= amount_2;
-    assert_eq!(amount, Amount::from_repr(11_845));
 }

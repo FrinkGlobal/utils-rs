@@ -15,7 +15,7 @@ use rust_base58::base58::FromBase58Error;
 /// The wallet address size.
 ///
 /// This is the length, in bytes of the wallet addresses. It can be used to create arrays to store
-/// complete addresses. Note: an address stored as a `[u8, WALLET_ADDRESS_LEN]` won't have any type
+/// complete addresses. Note: an address stored as a `[u8, WALLET_ADDRESS_LEN]` won't have any sort
 /// of checksum verification, and as such, it should be used with extreme care, never using is as
 /// an input or output mechanism, and only as an internal representation of the wallet address.
 pub const WALLET_ADDRESS_LEN: usize = 7;
@@ -79,6 +79,8 @@ impl WalletAddress {
     ///
     /// This should only be used if the raw input data is verified to be correct, ir it could lead
     /// o a false address.
+    ///
+    /// It will panic if the address does not start with byte `0x00`.
     pub fn from_data(addr: [u8; WALLET_ADDRESS_LEN]) -> WalletAddress {
         assert_eq!(addr[0],
                    0x00,
