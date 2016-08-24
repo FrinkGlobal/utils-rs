@@ -15,7 +15,8 @@ use std::u64;
 
 use rand::{Rng, thread_rng};
 
-use fractal_utils::{WalletAddress, Amount, WALLET_ADDRESS_LEN};
+use fractal_utils::wallet_address::{WalletAddress, WALLET_ADDRESS_LEN};
+use fractal_utils::amount::Amount;
 
 #[cfg(test)]
 #[test]
