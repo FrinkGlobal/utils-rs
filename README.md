@@ -7,7 +7,7 @@ This library gives utilities for working with Fractal Global Credits. It contain
 address representation and the currency amount type. Each of them is explained in its own
 documentation and can be easily used by third parties.
 
-Using is as simple as including this in the crate:
+Using it is as simple as including this in the crate:
 ```rust
 extern crate fractal_utils;
 ```
