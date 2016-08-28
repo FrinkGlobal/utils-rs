@@ -21,10 +21,12 @@ extern crate rust_base58;
 pub mod amount;
 pub mod wallet_address;
 pub mod location;
+pub mod relations;
 
 pub use amount::Amount;
 pub use wallet_address::{WALLET_ADDRESS_LEN, WalletAddress};
 pub use location::Address;
+pub use relations::{Relationship, get_relationship_id, get_relationship};
 /// The symbol of Fractal Global Credits
 ///
 /// This symbol, `⚛` should be used whenever an amount of currency has to be represented. It is an
