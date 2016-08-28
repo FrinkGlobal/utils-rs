@@ -3,7 +3,7 @@
 //! This module holds the Fractal Global Relationships, and there associated byte value.
 
 /// Defined relationships
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, RustcEncodable, RustcDecodable)]
 pub enum Relationship {
     /// A stranger to the user
     Stranger,
