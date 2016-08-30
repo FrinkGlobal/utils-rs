@@ -29,14 +29,15 @@ pub use location::Address;
 pub use relations::{Relationship, get_relationship_id, get_relationship};
 /// The symbol of Fractal Global Credits
 ///
-/// This symbol, `⚛` should be used whenever an amount of currency has to be represented. It is an
-/// atom symbol, the Unicode *U+269B character. It can easily be used when formatting currencies:
+/// This symbol, `⅋` should be used whenever an amount of currency has to be represented. It is an
+/// upside-down amperstand symbol, the Unicode *U+214B* character. It can easily be used when
+/// formatting currencies:
 ///
 /// ```
 /// use fractal_utils::{CURRENCY_SYMBOL, Amount};
-/// # assert_eq!(CURRENCY_SYMBOL, '⚛');
-/// # assert_eq!(CURRENCY_SYMBOL, '\u{269B}');
+/// # assert_eq!(CURRENCY_SYMBOL, '⅋');
+/// # assert_eq!(CURRENCY_SYMBOL, '\u{214B}');
 /// let amount = Amount::from_repr(30_000); // 30.000
-/// assert_eq!(format!("{} {}", CURRENCY_SYMBOL, amount), "⚛ 30");
+/// assert_eq!(format!("{} {}", CURRENCY_SYMBOL, amount), "⅋ 30");
 /// ```
-pub const CURRENCY_SYMBOL: char = '⚛';
+pub const CURRENCY_SYMBOL: char = '⅋';
