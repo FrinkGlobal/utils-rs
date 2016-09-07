@@ -29,8 +29,8 @@ pub use location::Address;
 pub use relations::{Relationship, get_relationship_id, get_relationship};
 /// The symbol of Fractal Global Credits
 ///
-/// This symbol, `Ͼ` should be used whenever an amount of currency has to be represented. It is an
-/// upside-down amperstand symbol, the Unicode *U+03FE* character. It can easily be used when
+/// This symbol, `Ͼ` should be used whenever an amount of currency has to be represented. It is a
+/// dotted lumate sigma symbol, the Unicode *U+03FE* character. It can easily be used when
 /// formatting currencies:
 ///
 /// ```
