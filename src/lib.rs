@@ -27,6 +27,7 @@ pub use amount::Amount;
 pub use wallet_address::{WALLET_ADDRESS_LEN, WalletAddress};
 pub use location::Address;
 pub use relations::{Relationship, get_relationship_id, get_relationship};
+
 /// The symbol of Fractal Global Credits
 ///
 /// This symbol, `Ͼ` should be used whenever an amount of currency has to be represented. It is a
