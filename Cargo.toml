@@ -1,6 +1,6 @@
 [package]
 name = "fractal-utils"
-version = "0.1.8"
+version = "0.1.9"
 authors = [
     "Eric Remigino <eric@fractal.global>",
     "Iban Eguia <iban@fractal.global>",
