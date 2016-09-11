@@ -29,6 +29,8 @@ use std::ops::{Add, AddAssign, Sub, SubAssign, Div, DivAssign, Mul, MulAssign, R
 use std::num::ParseIntError;
 
 use rustc_serialize::{Encodable, Decodable, Encoder, Decoder};
+#[cfg(feature = "json-types")]
+use rustc_serialize::json;
 
 use super::CURRENCY_SYMBOL;
 
@@ -118,6 +120,16 @@ impl Amount {
     /// Returns the largest value that can be represented as a currency amount.
     pub fn max_value() -> Amount {
         Amount { value: u64::MAX }
+    }
+}
+
+#[cfg(feature = "json-types")]
+/// The Amount type can easily be converted to json, using its `to_json()` method. Note that this
+/// will print the amount as a float, with up to three decimals. In high amounts this can lead to
+/// unnacuracies when printed. This can be avoided by using the `Display` trait.
+impl json::ToJson for Amount {
+    fn to_json(&self) -> json::Json {
+        json::Json::F64(self.value as f64 / 1000.0)
     }
 }
 

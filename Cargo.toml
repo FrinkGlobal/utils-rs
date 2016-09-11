@@ -20,3 +20,7 @@ rust-base58 = "0.0.4"
 
 [dev-dependencies]
 rand = "^0.3"
+
+[features]
+default = []
+json-types = []

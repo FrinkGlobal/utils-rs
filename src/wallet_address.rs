@@ -147,6 +147,15 @@ impl FromStr for WalletAddress {
     }
 }
 
+#[cfg(feature = "json-types")]
+/// The `WalletAddress` type can easily be converted to json, using its `to_json()` method. Note
+/// that this will return a `Json::String` with the wallet address as a string in it.
+impl json::ToJson for WalletAddress {
+    fn to_json(&self) -> json::Json {
+        json::Json::F64(self.value as f64 / 1000.0)
+    }
+}
+
 impl fmt::Display for WalletAddress {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let mut arr = [0u8; WALLET_ADDRESS_LEN + 2];
