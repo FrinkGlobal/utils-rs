@@ -2,6 +2,9 @@
 //!
 //! This module holds the Fractal Global Address, and Geological location data type objects.
 
+#[cfg(feature = "json-types")]
+use rustc_serialize::json;
+
 /// The particulars of the place where an organization or person resides
 #[derive(PartialEq, Debug, Clone, RustcEncodable, RustcDecodable)]
 pub struct Address {
@@ -76,12 +79,12 @@ impl Address {
 impl json::ToJson for Address {
     fn to_json(&self) -> json::Json {
         let mut object = json::Object::new();
-        let _ = object.insert(String::from("address_1"), self.address_1.to_json());
-        let _ = object.insert(String::from("address_2"), self.address_2.to_json());
+        let _ = object.insert(String::from("address1"), self.address1.to_json());
+        let _ = object.insert(String::from("address2"), self.address2.to_json());
         let _ = object.insert(String::from("city"), self.city.to_json());
         let _ = object.insert(String::from("state"), self.state.to_json());
         let _ = object.insert(String::from("zip"), self.zip.to_json());
         let _ = object.insert(String::from("country"), self.country.to_json());
-        Json::Object(object)
+        json::Json::Object(object)
     }
 }
