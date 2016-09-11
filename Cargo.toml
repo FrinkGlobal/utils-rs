@@ -1,6 +1,6 @@
 [package]
 name = "fractal-utils"
-version = "0.2.0"
+version = "0.2.1"
 authors = [
     "Eric Remigino <eric@fractal.global>",
     "Iban Eguia <iban@fractal.global>",
@@ -20,3 +20,7 @@ rust-base58 = "0.0.4"
 
 [dev-dependencies]
 rand = "^0.3"
+
+[features]
+default = []
+json-types = []

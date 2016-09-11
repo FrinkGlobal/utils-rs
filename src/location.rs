@@ -71,3 +71,17 @@ impl Address {
         &self.country
     }
 }
+
+#[cfg(feature = "json-types")]
+impl json::ToJson for Address {
+    fn to_json(&self) -> json::Json {
+        let mut object = json::Object::new();
+        let _ = object.insert(String::from("address_1"), self.address_1.to_json());
+        let _ = object.insert(String::from("address_2"), self.address_2.to_json());
+        let _ = object.insert(String::from("city"), self.city.to_json());
+        let _ = object.insert(String::from("state"), self.state.to_json());
+        let _ = object.insert(String::from("zip"), self.zip.to_json());
+        let _ = object.insert(String::from("country"), self.country.to_json());
+        Json::Object(object)
+    }
+}
