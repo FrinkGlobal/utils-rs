@@ -30,7 +30,9 @@ install:
 
 build_script:
   - cargo build
+  - cargo build --features json-types
   - cargo package
 
 test_script:
-- cargo test
+  - cargo test
+  - cargo test --features json-types

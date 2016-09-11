@@ -11,6 +11,8 @@ use std::str::FromStr;
 
 use rust_base58::{ToBase58, FromBase58};
 use rust_base58::base58::FromBase58Error;
+#[cfg(feature = "json-types")]
+use rustc_serialize::json;
 
 /// The wallet address size.
 ///
@@ -152,7 +154,7 @@ impl FromStr for WalletAddress {
 /// that this will return a `Json::String` with the wallet address as a string in it.
 impl json::ToJson for WalletAddress {
     fn to_json(&self) -> json::Json {
-        json::Json::F64(self.value as f64 / 1000.0)
+        json::Json::String(format!("{}", self))
     }
 }
 
