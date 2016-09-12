@@ -45,13 +45,16 @@ impl Address {
     }
 
     /// Returns address line 1
-    pub fn get_address1(&self) -> &String {
+    pub fn get_address1(&self) -> &str {
         &self.address1
     }
 
     /// Returns address line 2
-    pub fn get_address2(&self) -> Option<&String> {
-        self.address2.as_ref()
+    pub fn get_address2(&self) -> Option<&str> {
+        match self.address2 {
+            Some(ref addr2) => Some(addr2),
+            None => None,
+        }
     }
 
     /// Returns the city
@@ -65,12 +68,12 @@ impl Address {
     }
 
     /// Returns the zip code
-    pub fn get_zip(&self) -> &String {
+    pub fn get_zip(&self) -> &str {
         &self.zip
     }
 
     /// Returns the country
-    pub fn get_country(&self) -> &String {
+    pub fn get_country(&self) -> &str {
         &self.country
     }
 }
