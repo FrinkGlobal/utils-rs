@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Address","The particulars of the place where an organization or person resides"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Amount","Fractal Global Credits amount"],["AmountParseError","Amount parsing error."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["CURRENCY_SYMBOL","The symbol of Fractal Global Credits"]],"mod":[["amount","Fractal Global Credits amount"],["location","Fractal Global Location module"],["wallet_address","Fractal Global Wallet Address"]]});
