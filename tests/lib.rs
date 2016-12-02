@@ -24,7 +24,9 @@ fn it_fromstr_walletaddress() {
         let mut random_addr = [0u8; WALLET_ADDRESS_LEN];
         thread_rng().fill_bytes(&mut random_addr[1..]);
         assert_eq!(WalletAddress::from_str(&format!("{}", WalletAddress::from_data(random_addr)))
-            .unwrap().get_raw(), &random_addr);
+                       .unwrap()
+                       .get_raw(),
+                   &random_addr);
     }
 }
 
