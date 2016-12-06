@@ -402,6 +402,14 @@ macro_rules! impl_ops_int {
             }
         }
 
+        impl Mul<Amount> for $t {
+            type Output = Amount;
+
+            fn mul(self, rhs: Amount) -> Amount {
+                Amount { value: self as u64 * rhs.value }
+            }
+        }
+
         impl MulAssign<$t> for Amount {
             fn mul_assign(&mut self, rhs: $t) {
                 self.value *= rhs as u64
