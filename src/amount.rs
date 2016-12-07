@@ -272,7 +272,7 @@ impl FromStr for Amount {
                         0
                     };
                     let mut decimals_str = String::from(split.next().unwrap());
-                    if decimals_str.len() == 0 {
+                    if decimals_str.is_empty() {
                         return Err(AmountParseError::new(s,
                                                          "no decimals were found after the \
                                                           decimal separator",
