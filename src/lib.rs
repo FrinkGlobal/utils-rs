@@ -31,15 +31,15 @@ pub use location::Address;
 
 /// The symbol of Fractal Global Credits
 ///
-/// This symbol, `Ͼ` should be used whenever an amount of currency has to be represented. It is a
-/// dotted lumate sigma symbol, the Unicode *U+03FE* character. It can easily be used when
+/// This symbol, `₣` should be used whenever an amount of currency has to be represented. It is a
+/// FRENCH FRANC SIGN symbol, the Unicode *U+20A3* character. It can easily be used when
 /// formatting currencies:
 ///
 /// ```
 /// use fractal_utils::{CURRENCY_SYMBOL, Amount};
-/// # assert_eq!(CURRENCY_SYMBOL, 'Ͼ');
-/// # assert_eq!(CURRENCY_SYMBOL, '\u{03FE}');
+/// # assert_eq!(CURRENCY_SYMBOL, '₣');
+/// # assert_eq!(CURRENCY_SYMBOL, '\u{20A3}');
 /// let amount = Amount::from_repr(30_000); // 30.000
-/// assert_eq!(format!("{} {}", CURRENCY_SYMBOL, amount), "Ͼ 30");
+/// assert_eq!(format!("{} {}", CURRENCY_SYMBOL, amount), "₣ 30");
 /// ```
 pub const CURRENCY_SYMBOL: char = '₣';
