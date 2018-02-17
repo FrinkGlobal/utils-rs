@@ -42,4 +42,4 @@ pub use location::Address;
 /// let amount = Amount::from_repr(30_000); // 30.000
 /// assert_eq!(format!("{} {}", CURRENCY_SYMBOL, amount), "Ͼ 30");
 /// ```
-pub const CURRENCY_SYMBOL: char = 'Ͼ';
+pub const CURRENCY_SYMBOL: char = '₣';
